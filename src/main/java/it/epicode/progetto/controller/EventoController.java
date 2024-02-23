@@ -12,40 +12,51 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class BlogPostController {
+public class EventoController {
 
     @Autowired
     private EventoService eventoService;
 
-    @GetMapping("/post")
+    @GetMapping("/eventi")
     public Page<Evento> getAll(Pageable pageable){
 
-        return eventoService.cercaTuttiIBlogPosts(pageable);
+        return eventoService.cercaTuttiGliEventi(pageable);
     }
-    @GetMapping("/post/{id}")
+    @GetMapping("/eventi/{id}")
     public Evento getBlogPostById(@PathVariable int id){
-        return eventoService.cercaPostPerId(id);
+        return eventoService.cercaEventoPerId(id);
 
     }
-    @PostMapping("/post")
-    public Evento saveBlogPost(@RequestBody @Validated EventoRequest eventoRequest, BindingResult bindingResult){
+    @PostMapping("/eventi")
+    public Evento saveEvento(@RequestBody @Validated EventoRequest eventoRequest, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             throw new BadRequestException(bindingResult.getAllErrors().toString());
         }
 
-        return eventoService.salvaBlogPost(eventoRequest);
+        return eventoService.salvaEvento(eventoRequest);
     }
-    @PutMapping("/post/{id}")
-    public Evento updateBlogPost(@PathVariable int id, @RequestBody @Validated EventoRequest eventoRequest, BindingResult bindingResult){
+
+    @PatchMapping("/eventi/aggiungilista/{id}")
+
+    public  Evento updateList(@PathVariable int id,@RequestBody @Validated EventoRequest eventoRequest, BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            throw new BadRequestException(bindingResult.getAllErrors().toString());
+        }
+        return  eventoService.aggiornaListaPartecipanti(id,eventoRequest);
+    }
+
+
+    @PutMapping("/eventi/{id}")
+    public Evento updateEvento(@PathVariable int id, @RequestBody @Validated EventoRequest eventoRequest, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             throw new BadRequestException(bindingResult.getAllErrors().toString());
         }
 
-        return eventoService.aggiornaBlogPost(id, eventoRequest);
+        return eventoService.aggiornaEvento(id, eventoRequest);
     }
 
-    @DeleteMapping("/post/{id}")
-    public void deleteBlogPost(@PathVariable int id){
-        eventoService.cancellaBlogPost(id);
+    @DeleteMapping("/eventi/{id}")
+    public void deleteEvento(@PathVariable int id){
+        eventoService.cancellaEvento(id);
     }
 }

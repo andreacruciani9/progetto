@@ -1,4 +1,4 @@
-package it.epicode.w7d1t.exception;
+package it.epicode.progetto.exception;
 
 public class NotFoundException extends RuntimeException{
     public NotFoundException(String message){

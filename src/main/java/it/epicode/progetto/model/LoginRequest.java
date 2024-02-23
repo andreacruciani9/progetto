@@ -1,4 +1,4 @@
-package it.epicode.w7d1t.model;
+package it.epicode.progetto.model;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

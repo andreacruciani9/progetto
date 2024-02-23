@@ -1,6 +1,6 @@
-package it.epicode.w7d1t.repository;
+package it.epicode.progetto.repository;
 
-import it.epicode.w7d1t.model.Utente;
+import it.epicode.progetto.model.Utente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

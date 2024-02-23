@@ -1,4 +1,4 @@
-package it.epicode.w7d1t.exception;
+package it.epicode.progetto.exception;
 
 public class UnAuthorizedException extends RuntimeException{
     public UnAuthorizedException(String message){

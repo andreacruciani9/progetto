@@ -1,10 +1,10 @@
-package it.epicode.w7d1t.service;
+package it.epicode.progetto.service;
 
-import it.epicode.w7d1t.exception.NotFoundException;
-import it.epicode.w7d1t.model.Role;
-import it.epicode.w7d1t.model.Utente;
-import it.epicode.w7d1t.model.UtenteRequest;
-import it.epicode.w7d1t.repository.UtenteRepository;
+import it.epicode.progetto.exception.NotFoundException;
+import it.epicode.progetto.model.Role;
+import it.epicode.progetto.model.Utente;
+import it.epicode.progetto.model.UtenteRequest;
+import it.epicode.progetto.repository.UtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class UtenteService {
         utente.setCognome(utenteRequest.getCognome());
         utente.setUsername(utenteRequest.getUsername());
         utente.setPassword(encoder.encode(utenteRequest.getPassword()));
-        utente.setRole(Role.USER);
+        utente.setRole(Role.UTENTE);
 
         return utenteRepository.save(utente);
     }

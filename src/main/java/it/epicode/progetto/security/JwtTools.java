@@ -1,9 +1,9 @@
-package it.epicode.w7d1t.security;
+package it.epicode.progetto.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import it.epicode.w7d1t.exception.UnAuthorizedException;
-import it.epicode.w7d1t.model.Utente;
+import it.epicode.progetto.exception.UnAuthorizedException;
+import it.epicode.progetto.model.Utente;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;

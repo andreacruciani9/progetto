@@ -1,12 +1,12 @@
-package it.epicode.w7d1t.controller;
+package it.epicode.progetto.controller;
 
-import it.epicode.w7d1t.exception.BadRequestException;
-import it.epicode.w7d1t.exception.LoginFaultException;
-import it.epicode.w7d1t.model.LoginRequest;
-import it.epicode.w7d1t.model.Utente;
-import it.epicode.w7d1t.model.UtenteRequest;
-import it.epicode.w7d1t.security.JwtTools;
-import it.epicode.w7d1t.service.UtenteService;
+import it.epicode.progetto.exception.BadRequestException;
+import it.epicode.progetto.exception.LoginFaultException;
+import it.epicode.progetto.model.LoginRequest;
+import it.epicode.progetto.model.Utente;
+import it.epicode.progetto.model.UtenteRequest;
+import it.epicode.progetto.security.JwtTools;
+import it.epicode.progetto.service.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;

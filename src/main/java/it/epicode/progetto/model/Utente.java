@@ -1,4 +1,4 @@
-package it.epicode.w7d1t.model;
+package it.epicode.progetto.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -25,7 +25,8 @@ public class Utente implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role;
-
+    @ManyToMany(mappedBy ="utente")
+private  List <Evento> eventi;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

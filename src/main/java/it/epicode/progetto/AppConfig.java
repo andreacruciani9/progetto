@@ -1,4 +1,4 @@
-package it.epicode.w7d1t;
+package it.epicode.progetto;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

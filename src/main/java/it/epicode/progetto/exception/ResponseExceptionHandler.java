@@ -1,4 +1,4 @@
-package it.epicode.w7d1t.exception;
+package it.epicode.progetto.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

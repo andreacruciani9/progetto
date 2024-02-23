@@ -1,5 +1,5 @@
-package it.epicode.w7d1t.model;
+package it.epicode.progetto.model;
 
 public enum Role {
-    ADMIN, USER
+    ORGANIZZATORE, UTENTE
 }
